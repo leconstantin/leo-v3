@@ -1,9 +1,5 @@
-import { ModeSwitcher } from '@/components/ui/mode-switcher';
+import { HeroSection } from '@/features/home/hero';
 
 export default function Home() {
-  return (
-    <div>
-      <ModeSwitcher />
-    </div>
-  );
+  return <HeroSection />;
 }
