@@ -6,6 +6,19 @@ export default function Home() {
     <>
       <HeroSection />
       <NewsletterSection />
+      <p className="text-muted-foreground text-sm opacity-25">
+        <a
+          href="https://icons8.com/icon/DWVyLUd6dSgr/l"
+          rel="noopener"
+          target="_blank"
+        >
+          L
+        </a>{' '}
+        icon by{' '}
+        <a href="https://icons8.com" rel="noopener" target="_blank">
+          Icons8
+        </a>
+      </p>
     </>
   );
 }

@@ -5,6 +5,7 @@ import {
   PageHeaderHeading,
 } from '@/components/page-header';
 import { GitHubIcon, LinkedInIcon, TwitterIcon } from '@/components/ui/icons';
+import { siteConfig } from '@/lib/site';
 import profileImg from '@/public/profile.jpeg';
 
 export function HeroSection() {
@@ -54,17 +55,14 @@ export function HeroSection() {
             .
           </PageHeaderDescription>
           <div className="flex items-center gap-6">
-            <CustomExternalLink link="https://x.com/le_con82546" name="Twitter">
+            <CustomExternalLink link={siteConfig.links.twitter} name="Twitter">
               <TwitterIcon className="size-6 transition-all hover:scale-105" />
             </CustomExternalLink>
-            <CustomExternalLink
-              link="https://github.com/leconstantin"
-              name="Github"
-            >
+            <CustomExternalLink link={siteConfig.links.github} name="Github">
               <GitHubIcon className="size-6 transition-all hover:scale-105" />
             </CustomExternalLink>
             <CustomExternalLink
-              link="https://www.linkedin.com/in/leoconstantin/"
+              link={siteConfig.links.linkedin}
               name="LinkedIn"
             >
               <LinkedInIcon className="size-6 transition-all hover:scale-105" />
