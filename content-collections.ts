@@ -1,13 +1,13 @@
 // contentlayer.config.ts
-import { defineCollection, defineConfig } from "@content-collections/core";
-import { compileMDX } from "@content-collections/mdx";
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import { z } from "zod";
+import { defineCollection, defineConfig } from '@content-collections/core';
+import { compileMDX } from '@content-collections/mdx';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import { z } from 'zod';
 
 const posts = defineCollection({
-  name: "posts",
-  directory: "content/blog",
-  include: "**/*.mdx",
+  name: 'posts',
+  directory: 'content/blog',
+  include: '**/*.mdx',
   schema: z.object({
     title: z.string(),
     description: z.string().optional(),
@@ -22,8 +22,8 @@ const posts = defineCollection({
           rehypeAutolinkHeadings,
           {
             properties: {
-              className: ["subheading-anchor"],
-              ariaLabel: "Link to section",
+              className: ['subheading-anchor'],
+              ariaLabel: 'Link to section',
             },
           },
         ],

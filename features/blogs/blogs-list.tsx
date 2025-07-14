@@ -1,7 +1,7 @@
 import { allPosts } from 'content-collections';
 import { compareDesc } from 'date-fns';
 import { PageHeader } from '@/components/page-header';
-import PostCard from './postCard';
+import PostCard from './post-card';
 export function BlogsList() {
   const posts = allPosts
     .filter((post) => post.published)
