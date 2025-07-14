@@ -3,7 +3,7 @@ import { Callout } from './callout';
 export const components = {
   h1: ({ children, ...props }: ComponentProps<'h1'>) => (
     <h1
-      className="my-7 mb-5 scroll-m-20 font-bold text-3xl tracking-tight first:mt-0"
+      className="my-5 scroll-m-20 font-bold text-3xl tracking-tight first:mt-0"
       {...props}
     >
       {children}
@@ -39,7 +39,7 @@ export const components = {
     </h4>
   ),
   p: ({ children, ...props }: ComponentProps<'p'>) => (
-    <p className="my-3" {...props}>
+    <p className="my-1" {...props}>
       {children}
     </p>
   ),
