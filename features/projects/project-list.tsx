@@ -28,7 +28,7 @@ export function ProjectList() {
                   </Card.Link>
                 </h2>
                 <Card.Description>{project.description}</Card.Description>
-                <p className="relative z-10 mt-6 flex items-center font-medium text-muted-foreground text-sm transition group-hover:text-teal-500">
+                <p className="relative z-10 mt-6 flex items-center font-medium text-muted-foreground text-sm transition group-hover:text-blue-600">
                   <Link className="size-4" />
                   <span className="ml-2">{project.link.label}</span>
                 </p>

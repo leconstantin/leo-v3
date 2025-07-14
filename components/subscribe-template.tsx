@@ -72,8 +72,7 @@ export const SubscribedTemplate = ({ email }: EmailTemplateProps) => {
 
                   <Text className="mb-5 text-gray-700">
                     You have a new subscriber to your mailing list! Someone is
-                    interested in hearing more about Portifolio&apos;s services
-                    and updates.
+                    interested in hearing more about your work.
                   </Text>
 
                   {/* Subscriber Info */}
@@ -112,7 +111,7 @@ export const SubscribedTemplate = ({ email }: EmailTemplateProps) => {
             {/* Footer */}
             <Section className="px-8 py-6">
               <Text className="text-center text-gray-500 text-xs">
-                © {new Date().getFullYear()} Portifolio. All rights reserved.
+                © {new Date().getFullYear()} Leo. All rights reserved.
               </Text>
               <Text className="text-center text-gray-500 text-xs">
                 This is an automated notification from your website&apos;s

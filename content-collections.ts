@@ -14,7 +14,6 @@ const posts = defineCollection({
     date: z.string(),
     published: z.boolean().default(true),
     image: z.string(),
-    authors: z.array(z.string()),
   }),
   transform: async (document, context) => {
     const body = await compileMDX(context, document, {
@@ -42,18 +41,6 @@ const posts = defineCollection({
   },
 });
 
-const authors = defineCollection({
-  name: "authors",
-  directory: "content/authors",
-  include: "**/*.mdx",
-  schema: z.object({
-    title: z.string(),
-    description: z.string().optional(),
-    avatar: z.string(),
-    twitter: z.string(),
-  }),
-});
-
 export default defineConfig({
-  collections: [posts, authors],
+  collections: [posts],
 });

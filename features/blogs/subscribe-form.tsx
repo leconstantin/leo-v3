@@ -47,16 +47,16 @@ export default function SubscribeForm() {
         form.reset();
 
         toast.success('Subscribed successfully', {
-          description: 'You have been subscribed to Rathon.',
+          description: 'You have been subscribed to News Letters.',
         });
       } else {
         toast.error('Failed to subscribe. Please try again.', {
-          description: 'There was an error subscribing to Rathon.',
+          description: 'There was an error subscribing to News Letters.',
         });
       }
     } catch {
       toast.error('Failed to subscribe. Please try again.', {
-        description: 'There was an error subscribing to Rathon.',
+        description: 'There was an error subscribing to News Letters.',
       });
     } finally {
       setSubmitting(false);
