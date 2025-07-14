@@ -3,6 +3,7 @@ import './globals.css';
 import { GeistMono } from 'geist/font/mono';
 import { GeistSans } from 'geist/font/sans';
 import { ThemeProvider } from '@/components/theme-provider';
+import { Toaster } from '@/components/ui/sonner';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -28,6 +29,7 @@ export default function RootLayout({
           enableSystem
         >
           {children}
+          <Toaster closeButton richColors />
         </ThemeProvider>
       </body>
     </html>

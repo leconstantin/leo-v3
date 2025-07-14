@@ -1,5 +1,7 @@
 'use client';
 
+import SubscribeForm from './subscribe-form';
+
 export default function NewsletterForm() {
   return (
     <div className="mt-10 border-muted border-t">
@@ -10,6 +12,7 @@ export default function NewsletterForm() {
           other cool stuff.
         </p>
       </div>
+      <SubscribeForm />
     </div>
   );
 }

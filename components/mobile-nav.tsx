@@ -2,15 +2,16 @@
 'use client';
 import { motion, useCycle } from 'motion/react';
 import Link from 'next/link';
-import { useSelectedLayoutSegment } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import { type ReactNode, useEffect, useRef } from 'react';
 import { navItems } from '@/lib/config';
+import { cn } from '@/lib/utils';
 
 export default function MobileNav() {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const containerRef = useRef<HTMLElement>(null);
   const { height } = useDimensions(containerRef);
-  const segment = useSelectedLayoutSegment();
+  const segment = usePathname();
   return (
     <motion.nav
       animate={isOpen ? 'open' : 'closed'}
@@ -22,7 +23,7 @@ export default function MobileNav() {
       ref={containerRef}
     >
       <motion.div
-        className="absolute inset-0 right-0 w-full bg-white"
+        className="absolute inset-0 right-0 w-full bg-muted"
         variants={{
           open: (clipHeight = 1000) => ({
             clipPath: `circle(${clipHeight * 2 + 200}px at 100% 0)`,
@@ -48,14 +49,15 @@ export default function MobileNav() {
         variants={variants}
       >
         {navItems.map((item) => (
-          <MenuItem
-            className="border-gray-300 border-b py-5"
-            key={item.display}
-          >
+          <MenuItem className="border-border border-b py-5" key={item.display}>
             <Link
-              className={`flex w-full font-semibold capitalize ${
-                segment === item.href ? 'text-teal-500' : ''
-              }`}
+              // className={`flex w-full font-semibold capitalize ${
+              //   segment === item.href ? 'text-red-500' : 'text-green-400'
+              // }`}
+              className={cn(
+                'flex w-full font-semibold text-muted-foreground capitalize',
+                segment === item.href && 'text-primary'
+              )}
               href={`${item.href}`}
               onClick={() => {
                 toggleOpen();
@@ -77,7 +79,7 @@ const MenuToggle = ({ toggle }: { toggle: any }) => (
     type="button"
   >
     <span className="sr-only">Open Menu</span>
-    <svg height="23" viewBox="0 0 23 23" width="23">
+    <svg className="text-primary" height="23" viewBox="0 0 23 23" width="23">
       <title>Open Menu</title>
       <Path
         variants={{
@@ -105,8 +107,7 @@ const MenuToggle = ({ toggle }: { toggle: any }) => (
 
 const Path = (props: any) => (
   <motion.path
-    fill="transparent"
-    stroke="hsl(0, 0%, 18%)"
+    className={'fill-primary stroke-primary text-primary'}
     strokeLinecap="round"
     strokeWidth="2"
     {...props}

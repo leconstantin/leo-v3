@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { HeroProjectsSection } from '@/features/projects/hero-projects';
 import { ProjectList } from '@/features/projects/project-list';
 
 export const metadata: Metadata = {
@@ -7,5 +8,10 @@ export const metadata: Metadata = {
 };
 
 export default function ProjectsPage() {
-  return <ProjectList />;
+  return (
+    <>
+      <HeroProjectsSection />
+      <ProjectList />
+    </>
+  );
 }

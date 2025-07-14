@@ -1,27 +1,30 @@
+'use client';
 import Link from 'next/link';
+
+import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 
 export default function MainNav({
   href,
-  isActive,
   display,
 }: {
   href: string;
-  isActive: boolean;
   display: string;
 }) {
+  const pathname = usePathname();
+  const isActive = pathname === href;
   return (
     <li>
       <Link
         className={cn(
-          'relative block px-3 py-2 transition',
-          isActive ? 'text-teal-500' : 'hover:text-teal-500'
+          'relative block px-3 py-2 font-medium text-muted-foreground text-sm transition',
+          isActive ? 'text-primary' : 'hover:text-primary'
         )}
         href={href}
       >
         <p className="capitalize">{display}</p>
         {isActive && (
-          <span className="-bottom-px absolute inset-x-1 h-px bg-gradient-to-r from-teal-500/0 via-teal-500/40 to-teal-500/0" />
+          <span className="-bottom-px absolute inset-x-1 h-px bg-gradient-to-r from-teal-500/0 via-blue-500/40 to-blue-500/0" />
         )}
       </Link>
     </li>

@@ -1,105 +1,94 @@
 import Image from 'next/image';
+import {
+  PageHeader,
+  PageHeaderDescription,
+  PageHeaderHeading,
+} from '@/components/page-header';
 import { GitHubIcon, LinkedInIcon, TwitterIcon } from '@/components/ui/icons';
 import profileImg from '@/public/profile.jpeg';
 
 export function HeroSection() {
   return (
-    <section className="container">
-      <div className="flex w-full max-w-2xl flex-col space-y-5 py-6">
-        <Image
-          alt="Profile Picture"
-          className="aspect-square size-16 rounded-full"
-          height={64}
-          placeholder="blur"
-          priority
-          src={profileImg}
-          width={64}
-        />
-        <h1 className="font-bold text-5xl tracking-tighter">
-          Programmer. Writer. Player.
-        </h1>
-        <p className="mt-6 font-medium text-lg tracking-tight">
-          Hey, I&apos;m Constantin. I&apos;m the founder and CEO of{' '}
-          <a
-            className="font-semibold text-muted-foreground underline underline-offset-4"
-            href="https://rathon-rw.vercel.app/"
-            rel="noopener"
-            target="_blank"
-          >
-            Rathon
-          </a>{' '}
-          – a full-service agency specializing in website and software design,
-          development, and hosting.
-        </p>
-
-        <p className="mt-4 font-medium text-lg text-muted-foreground">
-          In my daily programming activities i use different languages and
-          frameworks to create well designed and functional softwares. But am
-          likely to use{' '}
-          <a
-            className="font-semibold text-primary underline underline-offset-4"
-            href="https://nextjs.org/"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Nextjs
-          </a>
-          ,{' '}
-          <a
-            className="font-semibold text-primary underline underline-offset-4"
-            href="https://www.typescriptlang.org/"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Typescript
-          </a>
-          ,{' '}
-          <a
-            className="font-semibold text-primary underline underline-offset-4"
-            href="https://www.prisma.io/"
-            rel="noreferrer noopener"
-            target="_blank"
-          >
-            Prisma
-          </a>
-          , and{' '}
-          <a
-            className="font-semibold text-primary underline underline-offset-4"
-            href="https://www.postgresql.org/"
-            rel="noopener"
-            target="_blank"
-          >
-            Postgress
-          </a>
-          .
-        </p>
-        <div className="mt-6 flex gap-6">
-          <a
-            aria-label="Visit my Twitter profile"
-            href="https://x.com/le_con82546"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <TwitterIcon className="h-6 w-6 transition-all hover:scale-105" />
-          </a>
-          <a
-            aria-label="Visit my GitHub profile"
-            href="https://github.com/leconstantin"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <GitHubIcon className="h-6 w-6 transition-all hover:scale-105" />
-          </a>
-          <a
-            aria-label="Visit my LinkedIn profile"
-            href="https://www.linkedin.com/in/leoconstantin/"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <LinkedInIcon className="h-6 w-6 transition-all hover:scale-105" />
-          </a>
+    <section className="relative border-grid">
+      <PageHeader className="min-h-[calc(100vh-150px)] text-left md:min-h-fit">
+        <div className="mx-auto flex w-full max-w-5xl flex-col gap-5">
+          <Image
+            alt="Profile Picture"
+            className="aspect-square size-16 rounded-full"
+            height={64}
+            placeholder="blur"
+            priority
+            src={profileImg}
+            width={64}
+          />
+          <PageHeaderHeading>Programmer. Writer. Player.</PageHeaderHeading>
+          <PageHeaderDescription>
+            Hey, I&apos;m Constantin. I&apos;m the founder and CEO of{' '}
+            <a
+              className="font-semibold text-muted-foreground underline-offset-4 transition-all ease-in-out hover:underline"
+              href="https://rathon-rw.vercel.app/"
+              rel="noopener"
+              target="_blank"
+            >
+              Rathon
+            </a>{' '}
+            – a full-service agency specializing in website and software design,
+            development, and hosting.
+          </PageHeaderDescription>
+          <PageHeaderDescription>
+            In my daily programming activities i use different languages and
+            frameworks to create well designed and functional softwares. But am
+            likely to use{' '}
+            <CustomExternalLink link="https://nextjs.org/" name="nextjs" />,{' '}
+            <CustomExternalLink
+              link="https://www.typescriptlang.org/"
+              name="Typescript"
+            />
+            ,{' '}
+            <CustomExternalLink link="https://www.convex.dev/" name="Convex" />,
+            and{' '}
+            <CustomExternalLink
+              link="https://www.ultracite.com/"
+              name="Ultracite"
+            />
+            .
+          </PageHeaderDescription>
+          <div className="flex items-center gap-6">
+            <CustomExternalLink link="https://x.com/le_con82546" name="Twitter">
+              <TwitterIcon className="size-6 transition-all hover:scale-105" />
+            </CustomExternalLink>
+            <CustomExternalLink
+              link="https://github.com/leconstantin"
+              name="Github"
+            >
+              <GitHubIcon className="size-6 transition-all hover:scale-105" />
+            </CustomExternalLink>
+            <CustomExternalLink
+              link="https://www.linkedin.com/in/leoconstantin/"
+              name="LinkedIn"
+            >
+              <LinkedInIcon className="size-6 transition-all hover:scale-105" />
+            </CustomExternalLink>
+          </div>
         </div>
-      </div>
+      </PageHeader>
     </section>
+  );
+}
+type ExtrenalLinkProps = {
+  link: string;
+  name: string;
+  children?: React.ReactNode;
+};
+function CustomExternalLink({ link, name, children }: ExtrenalLinkProps) {
+  return (
+    <a
+      className="font-semibold text-primary capitalize underline underline-offset-4"
+      href={link}
+      rel="noopener"
+      target="_blank"
+    >
+      {children ? children : name}
+    </a>
   );
 }
