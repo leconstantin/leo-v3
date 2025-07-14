@@ -24,7 +24,7 @@ export default function MainNav({
       >
         <p className="capitalize">{display}</p>
         {isActive && (
-          <span className="-bottom-px absolute inset-x-1 h-px bg-gradient-to-r from-teal-500/0 via-blue-500/40 to-blue-500/0" />
+          <span className="-bottom-px absolute inset-x-1 h-px bg-gradient-to-r from-teal-500/0 via-blue-600/60 to-blue-600/0" />
         )}
       </Link>
     </li>
