@@ -50,7 +50,7 @@ Card.Title = function CardTitle({
   children: ReactNode;
 }) {
   return (
-    <Component className="font-semibold text-base text-zinc-800 tracking-tight">
+    <Component className="font-semibold text-lg leading-tight tracking-tight">
       {href ? <Card.Link href={href}>{children}</Card.Link> : children}
     </Component>
   );
@@ -72,7 +72,7 @@ Card.Cta = function CardCta({ children }: { children: ReactNode }) {
   return (
     <div
       aria-hidden="true"
-      className="relative z-10 mt-4 flex items-center font-medium text-sm text-teal-500"
+      className="relative z-10 mt-4 flex items-center font-medium text-blue-600 text-sm"
     >
       {children}
       <ChevronRight className="ml-1 h-4 w-4 stroke-current" />
@@ -97,7 +97,7 @@ Card.Eyebrow = function CardEyebrow({
     <Component
       className={cn(
         className,
-        'relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400',
+        'relative z-10 order-first mb-3 flex items-center text-muted-foreground text-sm',
         decorate && 'pl-3.5'
       )}
       {...props}
