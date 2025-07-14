@@ -11,7 +11,7 @@ import profileImg from '@/public/profile.jpeg';
 export function HeroSection() {
   return (
     <section className="relative border-grid">
-      <PageHeader className="min-h-[calc(100vh-150px)] text-left md:min-h-fit">
+      <PageHeader className="min-h-[calc(100vh-150px)] pb-0 text-left md:min-h-fit md:pb-0 lg:pb-0">
         <div className="mx-auto flex w-full max-w-5xl flex-col gap-5">
           <Image
             alt="Profile Picture"
