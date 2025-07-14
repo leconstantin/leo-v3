@@ -31,7 +31,7 @@ Card.Link = function CardLink({
 }) {
   return (
     <>
-      <div className="-inset-y-6 -inset-x-4 sm:-inset-x-6 absolute z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:rounded-2xl" />
+      <div className="-inset-y-6 -inset-x-4 sm:-inset-x-6 absolute z-0 scale-95 bg-muted/40 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:rounded-lg" />
       <Link href={props.href} {...props}>
         <span className="-inset-y-6 -inset-x-4 sm:-inset-x-6 absolute z-20 sm:rounded-2xl" />
         <span className="relative z-10">{children}</span>
@@ -61,7 +61,11 @@ Card.Description = function CardDescription({
 }: {
   children: ReactNode;
 }) {
-  return <p className="relative z-10 mt-2 text-sm text-zinc-600">{children}</p>;
+  return (
+    <p className="relative z-10 mt-2 text-muted-foreground text-sm">
+      {children}
+    </p>
+  );
 };
 
 Card.Cta = function CardCta({ children }: { children: ReactNode }) {
