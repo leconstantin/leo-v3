@@ -1,7 +1,7 @@
 import { PageHeader, PageHeaderHeading } from '@/components/page-header';
 import SubscribeForm from './subscribe-form';
 
-export default function NewsletterForm() {
+export default function NewsletterSection() {
   return (
     <section className="relative border-grid">
       <PageHeader className="text-left">

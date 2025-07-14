@@ -79,15 +79,15 @@ export default function SubscribeForm() {
   return (
     <Form {...form}>
       <form
-        className="flex w-full max-w-sm items-center space-x-2"
+        className="flex w-full max-w-sm flex-col gap-5"
         onSubmit={form.handleSubmit(onSubmit)}
       >
         <FormField
           control={form.control}
           name="email"
           render={({ field }) => (
-            <FormItem className="flex flex-col gap-5">
-              <FormLabel className="sr-only font-bold">Email</FormLabel>
+            <FormItem>
+              <FormLabel>Email</FormLabel>
               <FormControl>
                 <Input
                   autoComplete="email"
@@ -102,23 +102,21 @@ export default function SubscribeForm() {
           )}
         />
 
-        <div className="flex justify-end">
-          <Button
-            className="bg-primary text-primary-foreground"
-            disabled={submitting}
-            size="sm"
-            type="submit"
-          >
-            {submitting ? (
-              <>
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                Subscribing...
-              </>
-            ) : (
-              'Subscribe'
-            )}
-          </Button>
-        </div>
+        <Button
+          className="w-full bg-primary text-primary-foreground"
+          disabled={submitting}
+          size="sm"
+          type="submit"
+        >
+          {submitting ? (
+            <>
+              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+              Subscribing...
+            </>
+          ) : (
+            'Subscribe'
+          )}
+        </Button>
       </form>
     </Form>
   );
