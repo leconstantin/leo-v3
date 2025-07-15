@@ -6,7 +6,7 @@ import { certificates } from '@/lib/config';
 export function CertificateList() {
   return (
     <section className="relative border-grid">
-      <PageHeader className="text-left">
+      <PageHeader className="text-left ">
         <div className=" mx-auto flex w-full max-w-5xl flex-col ">
           {certificates.map((certificate) => (
             <div className="mt-20 mb-7" key={certificate.category}>

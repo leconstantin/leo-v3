@@ -7,7 +7,7 @@ import {
 export function HeroBlogsSection() {
   return (
     <section className="relative border-grid">
-      <PageHeader className="text-left md:pb-0 lg:pb-0">
+      <PageHeader className="py-16 text-left md:pb-0 lg:pb-0">
         <div className="mx-auto flex w-full max-w-5xl flex-col gap-5">
           <PageHeaderHeading className="lg:max-w-4xl">
             Writing on software, design, and startups

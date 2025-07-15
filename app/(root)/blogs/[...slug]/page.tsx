@@ -58,10 +58,12 @@ export default async function PostPage({
 
   return (
     <section className="relative border-grid">
-      <PageHeader className="text-left">
+      <PageHeader className="py-16 text-left">
         <div className="mx-auto flex w-full max-w-5xl flex-col gap-8">
           <div className="flex flex-col gap-4">
-            <PageHeaderHeading>{post.title}</PageHeaderHeading>
+            <PageHeaderHeading className="text-3xl ">
+              {post.title}
+            </PageHeaderHeading>
 
             <time
               className="flex items-center text-muted-foreground text-sm tracking-tighter"

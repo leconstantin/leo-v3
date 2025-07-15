@@ -49,7 +49,7 @@ export function HeroSection() {
             <CustomExternalLink link="https://www.convex.dev/" name="Convex" />,
             and{' '}
             <CustomExternalLink
-              link="https://www.ultracite.com/"
+              link="https://www.ultracite.ai/"
               name="Ultracite"
             />
             .

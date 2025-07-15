@@ -1,6 +1,6 @@
-import { allPosts } from "content-collections";
-import type { MetadataRoute } from "next";
-import { siteConfig } from "@/lib/site";
+import { allPosts } from 'content-collections';
+import type { MetadataRoute } from 'next';
+import { siteConfig } from '@/lib/site';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [

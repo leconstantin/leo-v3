@@ -10,7 +10,8 @@ export function HeroProjectsSection() {
       <PageHeader className="text-left md:pb-8 lg:pb-8">
         <div className="mx-auto flex w-full max-w-5xl flex-col gap-5">
           <PageHeaderHeading>
-            Things I've made trying to put my dent in the universe.
+            Every project reflects a lesson, a challenge, or a small
+            breakthrough.
           </PageHeaderHeading>
           <PageHeaderDescription>
             I've worked on tons of little projects over the years but these are
