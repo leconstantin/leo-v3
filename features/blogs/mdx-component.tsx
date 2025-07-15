@@ -23,16 +23,13 @@ export const components = {
     </h2>
   ),
   h3: ({ children, ...props }: ComponentProps<'h3'>) => (
-    <h3
-      className="my-5 mb-3 scroll-m-20 font-medium text-lg tracking-tight"
-      {...props}
-    >
+    <h3 className="my-5 mb-0 font-medium text-lg tracking-tight" {...props}>
       {children}
     </h3>
   ),
   h4: ({ children, ...props }: ComponentProps<'h4'>) => (
     <h4
-      className="my-5 mb-3 scroll-m-20 font-semibold text-lg tracking-tighter"
+      className="my-0 scroll-m-20 font-semibold text-lg tracking-tighter"
       {...props}
     >
       {children}
